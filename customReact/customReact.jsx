@@ -1,10 +1,13 @@
 function customRender(reactElement, Container) {
     const domElement = document.createElement(reactElement.type)
-    domElement.innerHTML = reactElement.children
-    domElement.setAttribute('href', reactElement.props.href)
-    domElement.setAttribute('target', reactElement.props.target)
+    domElement.textContent = reactElement.children
+    for (const prop in reactElement.props) {
+        if (prop === 'children') containue;
+        domElement.setAttribute(prop, reactElement.props[prop])
+    }
     Container.appendChild(domElement)
 }
+
 
 const reactElements = {
     type: 'a',
