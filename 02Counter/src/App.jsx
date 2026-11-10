@@ -27,7 +27,7 @@ function App() {
 
   return (
     <>
-     <h1>Solanki</h1>
+     <h1>Solanki AI</h1>
      <h2>Conter Value: {counter}</h2>
      <button onClick={addfunction}>Add Value {counter}</button>
      <br />
