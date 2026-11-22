@@ -1,0 +1,74 @@
+{
+    "sourceFile": "React_router/src/components/github/github.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1795349568894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1795349689200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n function Github() {\n   const [data, setData] = useState([])\n \n     useEffect(() => {\n+        const [data, setData] = useState([])\n+        useEffect(() => {\n         fetch('https://api.github.com/users/Anirbank33')\n         .then((Response) => Response.json())\n         .then((data) => {\n             console.log(data);\n"
+                },
+                {
+                    "date": 1795349710668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,5 +25,6 @@\n \n export const githubLoader = async () => {\n   const response = await fetch('https://api.github.com/users/Anirbank33')\n   return response.json()\n+}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795349749605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,17 +3,17 @@\n function Github() {\n   const [data, setData] = useState([])\n \n     useEffect(() => {\n-        const [data, setData] = useState([])\n-        useEffect(() => {\n-        fetch('https://api.github.com/users/Anirbank33')\n-        .then((Response) => Response.json())\n-        .then((data) => {\n-            console.log(data);\n-            setData(data)\n-        })\n-    }, [])\n+    //     const [data, setData] = useState([])\n+    //     useEffect(() => {\n+    //     fetch('https://api.github.com/users/Anirbank33')\n+    //     .then((Response) => Response.json())\n+    //     .then((data) => {\n+    //         console.log(data);\n+    //         setData(data)\n+    //     })\n+    // }, [])\n     \n   return (\n     <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>github followers: {data.followers}\n     <img src={data.avatar_url} alt=\"git picture\" width={300} />\n"
+                },
+                {
+                    "date": 1795349765471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,6 +25,5 @@\n \n export const githubLoader = async () => {\n   const response = await fetch('https://api.github.com/users/Anirbank33')\n   return response.json()\n-}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795349905055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,8 @@\n }\n \n export default Github\n \n-export const githubLoader = async () => {\n+export const githubInfoLoader = async () => {\n   const response = await fetch('https://api.github.com/users/Anirbank33')\n   return response.json()\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795350135571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import { useState, useEffect } from 'react'\n+import { useLoaderData } from 'react-router';\n \n function Github() {\n   const [data, setData] = useState([])\n \n"
+                },
+                {
+                    "date": 1795350150292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { useState, useEffect } from 'react'\n-import { useLoaderData } from 'react-router';\n+import { useLoaderData } from 'react-router-dom';\n \n function Github() {\n   const [data, setData] = useState([])\n \n"
+                },
+                {
+                    "date": 1795350175122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,8 @@\n-import { useState, useEffect } from 'react'\n import { useLoaderData } from 'react-router-dom';\n \n function Github() {\n-  const [data, setData] = useState([])\n-\n-    useEffect(() => {\n-    //     const [data, setData] = useState([])\n-    //     useEffect(() => {\n-    //     fetch('https://api.github.com/users/Anirbank33')\n-    //     .then((Response) => Response.json())\n-    //     .then((data) => {\n-    //         console.log(data);\n-    //         setData(data)\n-    //     })\n-    // }, [])\n+  const data = useLoaderData()\n     \n   return (\n     <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>github followers: {data.followers}\n     <img src={data.avatar_url} alt=\"git picture\" width={300} />\n"
+                },
+                {
+                    "date": 1795350190407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,20 @@\n+import { useState, useEffect } from 'react'\n import { useLoaderData } from 'react-router-dom';\n \n function Github() {\n-  const data = useLoaderData()\n+  const [data, setData] = useState([])\n+\n+    useEffect(() => {\n+    //     const [data, setData] = useState([])\n+    //     useEffect(() => {\n+    //     fetch('https://api.github.com/users/Anirbank33')\n+    //     .then((Response) => Response.json())\n+    //     .then((data) => {\n+    //         console.log(data);\n+    //         setData(data)\n+    //     })\n+    // }, [])\n     \n   return (\n     <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>github followers: {data.followers}\n     <img src={data.avatar_url} alt=\"git picture\" width={300} />\n"
+                },
+                {
+                    "date": 1795350327900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,21 @@\n import { useState, useEffect } from 'react'\n import { useLoaderData } from 'react-router-dom';\n \n function Github() {\n-  const [data, setData] = useState([])\n+  const newdata = useLoaderData()\n+  // const [data, setData] = useState([])\n \n-    useEffect(() => {\n-    //     const [data, setData] = useState([])\n-    //     useEffect(() => {\n-    //     fetch('https://api.github.com/users/Anirbank33')\n-    //     .then((Response) => Response.json())\n-    //     .then((data) => {\n-    //         console.log(data);\n-    //         setData(data)\n-    //     })\n-    // }, [])\n+  //   useEffect(() => {\n+  //       const [data, setData] = useState([])\n+  //       useEffect(() => {\n+  //       fetch('https://api.github.com/users/Anirbank33')\n+  //       .then((Response) => Response.json())\n+  //       .then((data) => {\n+  //           console.log(data);\n+  //           setData(data)\n+  //       })\n+  //   }, [])\n     \n   return (\n     <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>github followers: {data.followers}\n     <img src={data.avatar_url} alt=\"git picture\" width={300} />\n"
+                },
+                {
+                    "date": 1795350353065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { useLoaderData } from 'react-router-dom';\n \n function Github() {\n   const newdata = useLoaderData()\n-  // const [data, setData] = useState([])\n+  const [data, setData] = useState([])\n \n   //   useEffect(() => {\n   //       const [data, setData] = useState([])\n   //       useEffect(() => {\n"
+                },
+                {
+                    "date": 1795350376634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,18 +4,18 @@\n function Github() {\n   const newdata = useLoaderData()\n   const [data, setData] = useState([])\n \n-  //   useEffect(() => {\n-  //       const [data, setData] = useState([])\n-  //       useEffect(() => {\n-  //       fetch('https://api.github.com/users/Anirbank33')\n-  //       .then((Response) => Response.json())\n-  //       .then((data) => {\n-  //           console.log(data);\n-  //           setData(data)\n-  //       })\n-  //   }, [])\n+    useEffect(() => {\n+        const [data, setData] = useState([])\n+        useEffect(() => {\n+        fetch('https://api.github.com/users/Anirbank33')\n+        .then((Response) => Response.json())\n+        .then((data) => {\n+            console.log(data);\n+            setData(data)\n+        })\n+    }, [])\n     \n   return (\n     <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>github followers: {data.followers}\n     <img src={data.avatar_url} alt=\"git picture\" width={300} />\n"
+                },
+                {
+                    "date": 1795350388688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,20 +2,20 @@\n import { useLoaderData } from 'react-router-dom';\n \n function Github() {\n   const newdata = useLoaderData()\n-  const [data, setData] = useState([])\n+  // const [data, setData] = useState([])\n \n-    useEffect(() => {\n-        const [data, setData] = useState([])\n-        useEffect(() => {\n-        fetch('https://api.github.com/users/Anirbank33')\n-        .then((Response) => Response.json())\n-        .then((data) => {\n-            console.log(data);\n-            setData(data)\n-        })\n-    }, [])\n+  //   useEffect(() => {\n+  //       const [data, setData] = useState([])\n+  //       useEffect(() => {\n+  //       fetch('https://api.github.com/users/Anirbank33')\n+  //       .then((Response) => Response.json())\n+  //       .then((data) => {\n+  //           console.log(data);\n+  //           setData(data)\n+  //       })\n+  //   }, [])\n     \n   return (\n     <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>github followers: {data.followers}\n     <img src={data.avatar_url} alt=\"git picture\" width={300} />\n"
+                },
+                {
+                    "date": 1795350613264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,8 @@\n-import { useState, useEffect } from 'react'\n import { useLoaderData } from 'react-router-dom';\n \n function Github() {\n-  const newdata = useLoaderData()\n-  // const [data, setData] = useState([])\n-\n-  //   useEffect(() => {\n-  //       const [data, setData] = useState([])\n-  //       useEffect(() => {\n-  //       fetch('https://api.github.com/users/Anirbank33')\n-  //       .then((Response) => Response.json())\n-  //       .then((data) => {\n-  //           console.log(data);\n-  //           setData(data)\n-  //       })\n-  //   }, [])\n+  const data = useLoaderData()\n     \n   return (\n     <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>github followers: {data.followers}\n     <img src={data.avatar_url} alt=\"git picture\" width={300} />\n"
+                }
+            ],
+            "date": 1795349568894,
+            "name": "Commit-0",
+            "content": "import { useState, useEffect } from 'react'\n\nfunction Github() {\n  const [data, setData] = useState([])\n\n    useEffect(() => {\n        fetch('https://api.github.com/users/Anirbank33')\n        .then((Response) => Response.json())\n        .then((data) => {\n            console.log(data);\n            setData(data)\n        })\n    }, [])\n    \n  return (\n    <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>github followers: {data.followers}\n    <img src={data.avatar_url} alt=\"git picture\" width={300} />\n    </div>\n  )\n}\n\nexport default Github\n\nexport const githubLoader = async () => {\n  const response = await fetch('https://api.github.com/users/Anirbank33')\n  return response.json()\n}"
+        }
+    ]
+}

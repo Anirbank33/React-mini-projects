@@ -1,0 +1,58 @@
+{
+    "sourceFile": "React_router/src/components/User/user.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1795114398890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1795114698052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import React from 'react'\n+import { useParams } from 'react-router-dom'\n \n function user() {\n   return (\n-    <div>user: </div>\n+    <div>user: {id}</div>\n   )\n }\n \n export default user\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795114799284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import React from 'react'\n import { useParams } from 'react-router-dom'\n \n function user() {\n+    const {userid} = useParams()\n   return (\n-    <div>user: {id}</div>\n+    <div>user: {userid}</div>\n   )\n }\n \n export default user\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795114988494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n function user() {\n     const {userid} = useParams()\n   return (\n-    <div>user: {userid}</div>\n+    <div className='bg-grey-600 text-white text-3xl p-4'>user: {userid}</div>\n   )\n }\n \n export default user\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795115032642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n function user() {\n     const {userid} = useParams()\n   return (\n-    <div className='bg-grey-600 text-white text-3xl p-4'>user: {userid}</div>\n+    <div className='bg-gray-400 text-white text-3xl p-4'>user: {userid}</div>\n   )\n }\n \n export default user\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795115050808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n function user() {\n     const {userid} = useParams()\n   return (\n-    <div className='bg-gray-400 text-white text-3xl p-4'>user: {userid}</div>\n+    <div className='bg-gray-400 text-white text-3xl p-4 align-middle'>user: {userid}</div>\n   )\n }\n \n export default user\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795115110251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n function user() {\n     const {userid} = useParams()\n   return (\n-    <div className='bg-gray-400 text-white text-3xl p-4 align-middle'>user: {userid}</div>\n+    <div className='bg-gray-400 text-white text-3xl p-4 align-middle items-center'>user: {userid}</div>\n   )\n }\n \n export default user\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795115128277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n function user() {\n     const {userid} = useParams()\n   return (\n-    <div className='bg-gray-400 text-white text-3xl p-4 align-middle items-center'>user: {userid}</div>\n+    <div className='bg-gray-400 text-white text-3xl p-4 align-middle items-center justify-center'>user: {userid}</div>\n   )\n }\n \n export default user\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795115164033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n function user() {\n     const {userid} = useParams()\n   return (\n-    <div className='bg-gray-400 text-white text-3xl p-4 align-middle items-center justify-center'>user: {userid}</div>\n+    <div className='bg-gray-400 text-white text-3xl p-4 align-middle items-center justify-center flex-item-center'>user: {userid}</div>\n   )\n }\n \n export default user\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795115184658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n function user() {\n     const {userid} = useParams()\n   return (\n-    <div className='bg-gray-400 text-white text-3xl p-4 align-middle items-center justify-center flex-item-center'>user: {userid}</div>\n+    <div className='bg-gray-400 text-white text-3xl p-4 align-middle items-center justify-center flex-item-center min-h-screen'>user: {userid}</div>\n   )\n }\n \n export default user\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795115194306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n function user() {\n     const {userid} = useParams()\n   return (\n-    <div className='bg-gray-400 text-white text-3xl p-4 align-middle items-center justify-center flex-item-center min-h-screen'>user: {userid}</div>\n+    <div className='bg-gray-400 text-white text-3xl p-4 align-middle items-center justify-center flex-item-center'>user: {userid}</div>\n   )\n }\n \n export default user\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1795114398890,
+            "name": "Commit-0",
+            "content": "import React from 'react'\n\nfunction user() {\n  return (\n    <div>user: </div>\n  )\n}\n\nexport default user"
+        }
+    ]
+}

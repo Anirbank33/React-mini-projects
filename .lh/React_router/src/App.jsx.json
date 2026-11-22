@@ -1,0 +1,26 @@
+{
+    "sourceFile": "React_router/src/App.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1795099786055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1795099833113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { useState } from 'react'\n import './App.css'\n import Header from './components/Header/Header'\n import Footer from './components/Footer/footer'\n-import Home from './components/Home/home' \n+import Home from './components/home/home'\n \n function App() {\n   const [count, setCount] = useState(0)\n \n"
+                },
+                {
+                    "date": 1795112348104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,15 @@\n-import { useState } from 'react'\n import './App.css'\n import Header from './components/Header/Header'\n import Footer from './components/Footer/footer'\n-import Home from './components/home/home'\n+import Home from './components/Home/home'\n \n function App() {\n-  const [count, setCount] = useState(0)\n-\n   return (\n     <>\n-    <Header/>\n-    <Footer/>\n-    <Home/>\n+      <Header />\n+      <Home />\n+      <Footer />\n     </>\n   )\n }\n \n"
+                }
+            ],
+            "date": 1795099786055,
+            "name": "Commit-0",
+            "content": "import { useState } from 'react'\nimport './App.css'\nimport Header from './components/Header/Header'\nimport Footer from './components/Footer/footer'\nimport Home from './components/Home/home' \n\nfunction App() {\n  const [count, setCount] = useState(0)\n\n  return (\n    <>\n    <Header/>\n    <Footer/>\n    <Home/>\n    </>\n  )\n}\n\nexport default App\n"
+        }
+    ]
+}

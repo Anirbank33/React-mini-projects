@@ -1,0 +1,98 @@
+{
+    "sourceFile": "React_router/src/main.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 20,
+            "patches": [
+                {
+                    "date": 1795100133354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1795100209383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { StrictMode } from 'react'\n import { createRoot } from 'react-dom/client'\n import './index.css'\n import App from './App.jsx'\n-import { RouterProvider } from 'react-router'\n+import { RouterProvider, createBrowserRouter } from 'react-router-dom'\n \n createRoot(document.getElementById('root')).render(\n   <StrictMode>\n     <RouterProvider router={router}/>\n"
+                },
+                {
+                    "date": 1795100280618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n import './index.css'\n import App from './App.jsx'\n import { RouterProvider, createBrowserRouter } from 'react-router-dom'\n \n+const router = createBrowserRouter\n+\n createRoot(document.getElementById('root')).render(\n   <StrictMode>\n     <RouterProvider router={router}/>\n   </StrictMode>,\n"
+                },
+                {
+                    "date": 1795100397600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,13 @@\n import './index.css'\n import App from './App.jsx'\n import { RouterProvider, createBrowserRouter } from 'react-router-dom'\n \n-const router = createBrowserRouter\n+const router = createBrowserRouter ([\n+  {\n+    path: '/'\n+  }\n+])\n \n createRoot(document.getElementById('root')).render(\n   <StrictMode>\n     <RouterProvider router={router}/>\n"
+                },
+                {
+                    "date": 1795100875246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,14 @@\n import { createRoot } from 'react-dom/client'\n import './index.css'\n import App from './App.jsx'\n import { RouterProvider, createBrowserRouter } from 'react-router-dom'\n+import layout from './components/layout.jsx'\n \n const router = createBrowserRouter ([\n   {\n-    path: '/'\n+    path: '/',\n+    element: <layout/>\n   }\n ])\n \n createRoot(document.getElementById('root')).render(\n"
+                },
+                {
+                    "date": 1795101178531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,24 @@\n import './index.css'\n import App from './App.jsx'\n import { RouterProvider, createBrowserRouter } from 'react-router-dom'\n import layout from './components/layout.jsx'\n+import About from './components/About/About.jsx'\n \n const router = createBrowserRouter ([\n   {\n     path: '/',\n-    element: <layout/>\n+    element: <layout/>,\n+    children: [\n+      {\n+        path: \"\",\n+        element: <Home/>\n+      },\n+      {\n+        path: \"about\",\n+        element: <About/>\n+      }\n+    ]\n   }\n ])\n \n createRoot(document.getElementById('root')).render(\n"
+                },
+                {
+                    "date": 1795112344994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,30 +1,36 @@\n import { StrictMode } from 'react'\n import { createRoot } from 'react-dom/client'\n import './index.css'\n-import App from './App.jsx'\n import { RouterProvider, createBrowserRouter } from 'react-router-dom'\n-import layout from './components/layout.jsx'\n+import Layout from './components/layout.jsx'\n+import Home from './components/Home/home.jsx'\n import About from './components/About/About.jsx'\n \n-const router = createBrowserRouter ([\n+const router = createBrowserRouter([\n   {\n     path: '/',\n-    element: <layout/>,\n+    element: <Layout />,\n     children: [\n       {\n-        path: \"\",\n-        element: <Home/>\n+        index: true,\n+        element: <Home />,\n       },\n       {\n-        path: \"about\",\n-        element: <About/>\n-      }\n-    ]\n-  }\n+        path: 'about',\n+        element: <About />,\n+      },\n+    ],\n+  },\n ])\n \n-createRoot(document.getElementById('root')).render(\n+const rootElement = document.getElementById('root')\n+\n+if (!rootElement) {\n+  throw new Error('Root element was not found')\n+}\n+\n+createRoot(rootElement).render(\n   <StrictMode>\n-    <RouterProvider router={router}/>\n+    <RouterProvider router={router} />\n   </StrictMode>,\n )\n"
+                },
+                {
+                    "date": 1795113344861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import { RouterProvider, createBrowserRouter } from 'react-router-dom'\n import Layout from './components/layout.jsx'\n import Home from './components/Home/home.jsx'\n import About from './components/About/About.jsx'\n+import Contact from './components/contact/contact.jsx'\n \n const router = createBrowserRouter([\n   {\n     path: '/',\n@@ -18,8 +19,12 @@\n       {\n         path: 'about',\n         element: <About />,\n       },\n+      {\n+        path: 'contact',\n+        element: <Contact />,\n+      },\n     ],\n   },\n ])\n \n"
+                },
+                {
+                    "date": 1795113803978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,34 +1,43 @@\n import { StrictMode } from 'react'\n import { createRoot } from 'react-dom/client'\n import './index.css'\n-import { RouterProvider, createBrowserRouter } from 'react-router-dom'\n+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'\n import Layout from './components/layout.jsx'\n import Home from './components/Home/home.jsx'\n import About from './components/About/About.jsx'\n import Contact from './components/contact/contact.jsx'\n \n-const router = createBrowserRouter([\n-  {\n-    path: '/',\n-    element: <Layout />,\n-    children: [\n-      {\n-        index: true,\n-        element: <Home />,\n-      },\n-      {\n-        path: 'about',\n-        element: <About />,\n-      },\n-      {\n-        path: 'contact',\n-        element: <Contact />,\n-      },\n-    ],\n-  },\n+// const router = createBrowserRouter([\n+//   {\n+//     path: '/',\n+//     element: <Layout />,\n+//     children: [\n+//       {\n+//         index: true,\n+//         element: <Home />,\n+//       },\n+//       {\n+//         path: 'about',\n+//         element: <About />,\n+//       },\n+//       {\n+//         path: 'contact',\n+//         element: <Contact />,\n+//       },\n+//     ],\n+//   },\n+// ])\n+\n+\n+\n+const router = createBrowserRouter ([\n+  createRoutesFromElements(\n+    <Route path='/' element={<Layout/>}>\n+\n+    </Route>\n+  )\n ])\n-\n const rootElement = document.getElementById('root')\n \n if (!rootElement) {\n   throw new Error('Root element was not found')\n"
+                },
+                {
+                    "date": 1795113891448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,9 @@\n \n const router = createBrowserRouter ([\n   createRoutesFromElements(\n     <Route path='/' element={<Layout/>}>\n+      <Route path='' element={<Home/>}/>\n \n     </Route>\n   )\n ])\n"
+                },
+                {
+                    "date": 1795113922963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,9 @@\n const router = createBrowserRouter ([\n   createRoutesFromElements(\n     <Route path='/' element={<Layout/>}>\n       <Route path='' element={<Home/>}/>\n+      <Route path='about' element={<About/>}/>\n \n     </Route>\n   )\n ])\n"
+                },
+                {
+                    "date": 1795113951869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,9 @@\n   createRoutesFromElements(\n     <Route path='/' element={<Layout/>}>\n       <Route path='' element={<Home/>}/>\n       <Route path='about' element={<About/>}/>\n+      <Route path='contact' element={<Contact/>}/>\n \n     </Route>\n   )\n ])\n"
+                },
+                {
+                    "date": 1795113965322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,8 @@\n     <Route path='/' element={<Layout/>}>\n       <Route path='' element={<Home/>}/>\n       <Route path='about' element={<About/>}/>\n       <Route path='contact' element={<Contact/>}/>\n-\n     </Route>\n   )\n ])\n const rootElement = document.getElementById('root')\n@@ -50,4 +49,5 @@\n   <StrictMode>\n     <RouterProvider router={router} />\n   </StrictMode>,\n )\n+\n"
+                },
+                {
+                    "date": 1795114073654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,17 +29,17 @@\n // ])\n \n \n \n-const router = createBrowserRouter ([\n+const router = createBrowserRouter (\n   createRoutesFromElements(\n     <Route path='/' element={<Layout/>}>\n       <Route path='' element={<Home/>}/>\n       <Route path='about' element={<About/>}/>\n       <Route path='contact' element={<Contact/>}/>\n     </Route>\n   )\n-])\n+)\n const rootElement = document.getElementById('root')\n \n if (!rootElement) {\n   throw new Error('Root element was not found')\n"
+                },
+                {
+                    "date": 1795114567119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,10 @@\n     <Route path='/' element={<Layout/>}>\n       <Route path='' element={<Home/>}/>\n       <Route path='about' element={<About/>}/>\n       <Route path='contact' element={<Contact/>}/>\n+      <Route path='user/:id' element={<User/>}/>\n+      \n     </Route>\n   )\n )\n const rootElement = document.getElementById('root')\n"
+                },
+                {
+                    "date": 1795114579233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n import Layout from './components/layout.jsx'\n import Home from './components/Home/home.jsx'\n import About from './components/About/About.jsx'\n import Contact from './components/contact/contact.jsx'\n+import user from './components/User/user.jsx'\n \n // const router = createBrowserRouter([\n //   {\n //     path: '/',\n"
+                },
+                {
+                    "date": 1795114588793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import Layout from './components/layout.jsx'\n import Home from './components/Home/home.jsx'\n import About from './components/About/About.jsx'\n import Contact from './components/contact/contact.jsx'\n-import user from './components/User/user.jsx'\n+import User from './components/User/user.jsx'\n \n // const router = createBrowserRouter([\n //   {\n //     path: '/',\n"
+                },
+                {
+                    "date": 1795114782716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     <Route path='/' element={<Layout/>}>\n       <Route path='' element={<Home/>}/>\n       <Route path='about' element={<About/>}/>\n       <Route path='contact' element={<Contact/>}/>\n-      <Route path='user/:id' element={<User/>}/>\n+      <Route path='user/:userid' element={<User/>}/>\n       \n     </Route>\n   )\n )\n"
+                },
+                {
+                    "date": 1795349715676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n import Home from './components/Home/home.jsx'\n import About from './components/About/About.jsx'\n import Contact from './components/contact/contact.jsx'\n import User from './components/User/user.jsx'\n+import Github from './components/Github/github.jsx'\n \n // const router = createBrowserRouter([\n //   {\n //     path: '/',\n@@ -37,9 +38,11 @@\n       <Route path='' element={<Home/>}/>\n       <Route path='about' element={<About/>}/>\n       <Route path='contact' element={<Contact/>}/>\n       <Route path='user/:userid' element={<User/>}/>\n+      <Route loader={} path='github' element={<Github/>}/>\n       \n+      \n     </Route>\n   )\n )\n const rootElement = document.getElementById('root')\n"
+                },
+                {
+                    "date": 1795350037809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import Home from './components/Home/home.jsx'\n import About from './components/About/About.jsx'\n import Contact from './components/contact/contact.jsx'\n import User from './components/User/user.jsx'\n-import Github from './components/Github/github.jsx'\n+import Github, {githubInfoLoader} from './components/Github/github.jsx'\n \n // const router = createBrowserRouter([\n //   {\n //     path: '/',\n@@ -38,9 +38,9 @@\n       <Route path='' element={<Home/>}/>\n       <Route path='about' element={<About/>}/>\n       <Route path='contact' element={<Contact/>}/>\n       <Route path='user/:userid' element={<User/>}/>\n-      <Route loader={} path='github' element={<Github/>}/>\n+      <Route loader={githubInfoLoader} path='github' element={<Github/>}/>\n       \n       \n     </Route>\n   )\n"
+                },
+                {
+                    "date": 1795350082095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import Home from './components/Home/home.jsx'\n import About from './components/About/About.jsx'\n import Contact from './components/contact/contact.jsx'\n import User from './components/User/user.jsx'\n-import Github, {githubInfoLoader} from './components/Github/github.jsx'\n+import Github, {githubInfoLoader} from './components/github/github.jsx'\n \n // const router = createBrowserRouter([\n //   {\n //     path: '/',\n"
+                }
+            ],
+            "date": 1795100133354,
+            "name": "Commit-0",
+            "content": "import { StrictMode } from 'react'\nimport { createRoot } from 'react-dom/client'\nimport './index.css'\nimport App from './App.jsx'\nimport { RouterProvider } from 'react-router'\n\ncreateRoot(document.getElementById('root')).render(\n  <StrictMode>\n    <RouterProvider router={router}/>\n  </StrictMode>,\n)\n"
+        }
+    ]
+}
