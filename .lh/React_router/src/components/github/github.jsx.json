@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 14,
+            "activePatchIndex": 24,
             "patches": [
                 {
                     "date": 1795349568894,
@@ -64,6 +64,46 @@
                 {
                     "date": 1795350613264,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,8 @@\n-import { useState, useEffect } from 'react'\n import { useLoaderData } from 'react-router-dom';\n \n function Github() {\n-  const newdata = useLoaderData()\n-  // const [data, setData] = useState([])\n-\n-  //   useEffect(() => {\n-  //       const [data, setData] = useState([])\n-  //       useEffect(() => {\n-  //       fetch('https://api.github.com/users/Anirbank33')\n-  //       .then((Response) => Response.json())\n-  //       .then((data) => {\n-  //           console.log(data);\n-  //           setData(data)\n-  //       })\n-  //   }, [])\n+  const data = useLoaderData()\n     \n   return (\n     <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>github followers: {data.followers}\n     <img src={data.avatar_url} alt=\"git picture\" width={300} />\n"
+                },
+                {
+                    "date": 1795351129974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   const data = useLoaderData()\n     \n   return (\n     <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>github followers: {data.followers}\n-    <img src={data.avatar_url} alt=\"git picture\" width={300} />\n+    <img className='rounded-full' src={data.avatar_url} alt=\"git picture\" width={300} />\n     </div>\n   )\n }\n \n"
+                },
+                {
+                    "date": 1795351165757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   const data = useLoaderData()\n     \n   return (\n     <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>github followers: {data.followers}\n-    <img className='rounded-full' src={data.avatar_url} alt=\"git picture\" width={300} />\n+    <img className='rounded-full object-cover w-24 h-24' src={data.avatar_url} alt=\"git picture\" width={300} />\n     </div>\n   )\n }\n \n"
+                },
+                {
+                    "date": 1795351197275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   const data = useLoaderData()\n     \n   return (\n     <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>github followers: {data.followers}\n-    <img className='rounded-full object-cover w-24 h-24' src={data.avatar_url} alt=\"git picture\" width={300} />\n+    <img className='rounded-full object-cover w-24 h-24 aspect-square' src={data.avatar_url} alt=\"git picture\" width={300} />\n     </div>\n   )\n }\n \n"
+                },
+                {
+                    "date": 1795351221318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   const data = useLoaderData()\n     \n   return (\n     <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>github followers: {data.followers}\n-    <img className='rounded-full object-cover w-24 h-24 aspect-square' src={data.avatar_url} alt=\"git picture\" width={300} />\n+    <img className='rounded-full object-cover w-50 h-50 aspect-square' src={data.avatar_url} alt=\"git picture\" width={300} />\n     </div>\n   )\n }\n \n"
+                },
+                {
+                    "date": 1795351293790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n function Github() {\n   const data = useLoaderData()\n     \n   return (\n-    <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>github followers: {data.followers}\n+    <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl flex flex-items-center'>github followers: {data.followers}\n     <img className='rounded-full object-cover w-50 h-50 aspect-square' src={data.avatar_url} alt=\"git picture\" width={300} />\n     </div>\n   )\n }\n"
+                },
+                {
+                    "date": 1795351305608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n function Github() {\n   const data = useLoaderData()\n     \n   return (\n-    <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl flex flex-items-center'>github followers: {data.followers}\n+    <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl flex-items-center'>github followers: {data.followers}\n     <img className='rounded-full object-cover w-50 h-50 aspect-square' src={data.avatar_url} alt=\"git picture\" width={300} />\n     </div>\n   )\n }\n"
+                },
+                {
+                    "date": 1795351333445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n function Github() {\n   const data = useLoaderData()\n     \n   return (\n-    <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl flex-items-center'>github followers: {data.followers}\n+    <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl flex-items-center justify-center '>github followers: {data.followers}\n     <img className='rounded-full object-cover w-50 h-50 aspect-square' src={data.avatar_url} alt=\"git picture\" width={300} />\n     </div>\n   )\n }\n"
+                },
+                {
+                    "date": 1795351405935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n function Github() {\n   const data = useLoaderData()\n     \n   return (\n-    <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl flex-items-center justify-center '>github followers: {data.followers}\n+    <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl flex-items-center justify-center h-64 '>github followers: {data.followers}\n     <img className='rounded-full object-cover w-50 h-50 aspect-square' src={data.avatar_url} alt=\"git picture\" width={300} />\n     </div>\n   )\n }\n"
+                },
+                {
+                    "date": 1795351500751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   const data = useLoaderData()\n     \n   return (\n     <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl flex-items-center justify-center h-64 '>github followers: {data.followers}\n-    <img className='rounded-full object-cover w-50 h-50 aspect-square' src={data.avatar_url} alt=\"git picture\" width={300} />\n+    <img className='rounded-full object-cover w-48 h-48 aspect-square' src={data.avatar_url} alt=\"git picture\" width={300} />\n     </div>\n   )\n }\n \n"
+                },
+                {
+                    "date": 1795351687054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,46 @@\n function Github() {\n   const data = useLoaderData()\n     \n   return (\n-    <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl flex-items-center justify-center h-64 '>github followers: {data.followers}\n-    <img className='rounded-full object-cover w-48 h-48 aspect-square' src={data.avatar_url} alt=\"git picture\" width={300} />\n-    </div>\n+    <section className=\"bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 px-4 py-6 text-white sm:px-6 lg:px-8\">\n+      <div className=\"mx-auto flex max-w-5xl items-center justify-center\">\n+        <div className=\"relative w-full overflow-hidden rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl sm:p-8\">\n+          <div className=\"absolute -right-20 -top-20 h-48 w-48 rounded-full bg-indigo-500/30 blur-3xl\" />\n+          <div className=\"absolute -bottom-24 -left-20 h-56 w-56 rounded-full bg-cyan-500/20 blur-3xl\" />\n+\n+          <div className=\"relative flex flex-col items-center gap-8 md:flex-row md:justify-center md:gap-12\">\n+            <div className=\"rounded-full border-4 border-white/20 p-2 shadow-xl ring-1 ring-white/10\">\n+              <img\n+                className=\"rounded-full object-cover w-48 h-48 aspect-square\"\n+                src={data.avatar_url}\n+                alt=\"GitHub profile\"\n+              />\n+            </div>\n+\n+            <div className=\"text-center md:text-left\">\n+              <p className=\"mb-2 text-sm font-semibold uppercase tracking-[0.3em] text-indigo-300\">\n+                GitHub Profile\n+              </p>\n+              <h1 className=\"text-3xl font-bold tracking-tight sm:text-4xl\">\n+                {data.name || data.login}\n+              </h1>\n+              <div className=\"mt-5 inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/10 px-5 py-3 shadow-lg\">\n+                <span className=\"h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.8)]\" />\n+                <span className=\"text-lg text-slate-200\">\n+                  <strong className=\"text-white\">{data.followers}</strong> GitHub followers\n+                </span>\n+              </div>\n+              {data.bio && (\n+                <p className=\"mt-5 max-w-md text-base leading-7 text-slate-300\">\n+                  {data.bio}\n+                </p>\n+              )}\n+            </div>\n+          </div>\n+        </div>\n+      </div>\n+    </section>\n   )\n }\n \n export default Github\n"
                 }
             ],
             "date": 1795349568894,
