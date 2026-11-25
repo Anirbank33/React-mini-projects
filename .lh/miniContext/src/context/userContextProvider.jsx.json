@@ -1,0 +1,46 @@
+{
+    "sourceFile": "miniContext/src/context/userContextProvider.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1795457685903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1795457734167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,8 @@\n import React from \"react\";\n-import userContext from \"./userContext\";\n\\ No newline at end of file\n+import userContext from \"./userContext\";\n+\n+const userContextProvider = () => {\n+\n+}\n+\n+export default userContextProvider\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795457830037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n import React from \"react\";\n import userContext from \"./userContext\";\n \n-const userContextProvider = () => {\n+const userContextProvider = ({children}) => {\n+    return\n+    <>\n+    {children}\n+    </>\n \n }\n \n export default userContextProvider\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795457873840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,11 @@\n import userContext from \"./userContext\";\n \n const userContextProvider = ({children}) => {\n     return\n-    <>\n+    <userContext.Provider>\n     {children}\n-    </>\n+    <userContext.Provider/>\n \n }\n \n export default userContextProvider\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795458008638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n import React from \"react\";\n import userContext from \"./userContext\";\n \n const userContextProvider = ({children}) => {\n+    const [user, setUser] = React.userState(null)\n     return\n     <userContext.Provider>\n     {children}\n     <userContext.Provider/>\n \n }\n \n\\ No newline at end of file\n-export default userContextProvider\n+export default userContextProvider;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795458031253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from \"react\";\n import userContext from \"./userContext\";\n \n const userContextProvider = ({children}) => {\n-    const [user, setUser] = React.userState(null)\n+    const [user, setUser] = React.useState(null)\n     return\n     <userContext.Provider>\n     {children}\n     <userContext.Provider/>\n"
+                },
+                {
+                    "date": 1795458891253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,11 @@\n \n const userContextProvider = ({children}) => {\n     const [user, setUser] = React.useState(null)\n     return\n-    <userContext.Provider>\n+    <userContext.Provider value={user, setUser}>\n     {children}\n-    <userContext.Provider/>\n+    </userContext.Provider>\n \n }\n \n export default userContextProvider;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795458921387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,13 @@\n import userContext from \"./userContext\";\n \n const userContextProvider = ({children}) => {\n     const [user, setUser] = React.useState(null)\n-    return\n-    <userContext.Provider value={user, setUser}>\n-    {children}\n-    </userContext.Provider>\n+    return (\n+        <userContext.Provider value={{ user, setUser }}>\n+            {children}\n+        </userContext.Provider>\n+    )\n \n }\n \n export default userContextProvider;\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1795457685903,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\nimport userContext from \"./userContext\";"
+        }
+    ]
+}

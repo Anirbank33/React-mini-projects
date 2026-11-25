@@ -1,0 +1,102 @@
+{
+    "sourceFile": "miniContext/src/components/Login.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 21,
+            "patches": [
+                {
+                    "date": 1795459552956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1795459639406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,12 @@\n import userContext from '../context/userContext'\n \n function Login() {\n   return (\n-    <div>Login</div>\n+    <div>\n+        <h2>Login</h2>\n+        <input type=\"text\" placeholder='Username' />\n+    </div>\n   )\n }\n \n export default Login\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795459780834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n   return (\n     <div>\n         <h2>Login</h2>\n         <input type=\"text\" placeholder='Username' />\n+        <input type=\"text\" placeholder='Password' />\n+        <button onClick={handleSubmit}>Submit</button>\n     </div>\n   )\n }\n \n"
+                },
+                {
+                    "date": 1795459816723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,11 @@\n import userContext from '../context/userContext'\n \n function Login() {\n   return (\n+    cosnt handleSubmit = () => {\n+        \n+    }\n     <div>\n         <h2>Login</h2>\n         <input type=\"text\" placeholder='Username' />\n         <input type=\"text\" placeholder='Password' />\n"
+                },
+                {
+                    "date": 1795459916138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n \n function Login() {\n   return (\n     cosnt handleSubmit = () => {\n-        \n+        const [username, setUsername] = useState('')\n+        const [Password, usePassword] = useState('')\n     }\n     <div>\n         <h2>Login</h2>\n         <input type=\"text\" placeholder='Username' />\n"
+                },
+                {
+                    "date": 1795460058927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,14 @@\n         const [Password, usePassword] = useState('')\n     }\n     <div>\n         <h2>Login</h2>\n-        <input type=\"text\" placeholder='Username' />\n+        <input type=\"text\"\n+        value={username}\n+        onChange={(e) => setUsername(e.target.value){\n+\n+        }}\n+         placeholder='Username' />\n         <input type=\"text\" placeholder='Password' />\n         <button onClick={handleSubmit}>Submit</button>\n     </div>\n   )\n"
+                },
+                {
+                    "date": 1795460118755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,11 +10,9 @@\n     <div>\n         <h2>Login</h2>\n         <input type=\"text\"\n         value={username}\n-        onChange={(e) => setUsername(e.target.value){\n-\n-        }}\n+        onChange={(e) => setUsername(e.target.value)}\n          placeholder='Username' />\n         <input type=\"text\" placeholder='Password' />\n         <button onClick={handleSubmit}>Submit</button>\n     </div>\n"
+                },
+                {
+                    "date": 1795460154559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,12 @@\n         <input type=\"text\"\n         value={username}\n         onChange={(e) => setUsername(e.target.value)}\n          placeholder='Username' />\n-        <input type=\"text\" placeholder='Password' />\n+        <input type=\"text\"\n+        value={Password}\n+        onChange={(e) => setPassword(e.target.value)}\n+         placeholder='Password' />\n         <button onClick={handleSubmit}>Submit</button>\n     </div>\n   )\n }\n"
+                },
+                {
+                    "date": 1795460255342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import React, {useState, useContext} from 'react'\n import userContext from '../context/userContext'\n \n function Login() {\n-  return (\n     cosnt handleSubmit = () => {\n         const [username, setUsername] = useState('')\n         const [Password, usePassword] = useState('')\n+  return (\n     }\n     <div>\n         <h2>Login</h2>\n         <input type=\"text\"\n"
+                },
+                {
+                    "date": 1795460266492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React, {useState, useContext} from 'react'\n import userContext from '../context/userContext'\n \n function Login() {\n-    cosnt handleSubmit = () => {\n+    const handleSubmit = () => {\n         const [username, setUsername] = useState('')\n         const [Password, usePassword] = useState('')\n   return (\n     }\n"
+                },
+                {
+                    "date": 1795460305714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,9 @@\n function Login() {\n     const handleSubmit = () => {\n         const [username, setUsername] = useState('')\n         const [Password, usePassword] = useState('')\n-  return (\n-    }\n+        return (\n     <div>\n         <h2>Login</h2>\n         <input type=\"text\"\n         value={username}\n"
+                },
+                {
+                    "date": 1795460376215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,13 @@\n import React, {useState, useContext} from 'react'\n import userContext from '../context/userContext'\n \n function Login() {\n+    const [username, setUsername] = useState('')\n+    const [Password, usePassword] = useState('')\n     const handleSubmit = () => {\n-        const [username, setUsername] = useState('')\n-        const [Password, usePassword] = useState('')\n+        \n+    }\n         return (\n     <div>\n         <h2>Login</h2>\n         <input type=\"text\"\n"
+                },
+                {
+                    "date": 1795460472428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,11 @@\n import userContext from '../context/userContext'\n \n function Login() {\n     const [username, setUsername] = useState('')\n-    const [Password, usePassword] = useState('')\n+    const [Password, setPassword] = useState('')\n     const handleSubmit = () => {\n-        \n+\n     }\n         return (\n     <div>\n         <h2>Login</h2>\n"
+                },
+                {
+                    "date": 1795460602185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n \n function Login() {\n     const [username, setUsername] = useState('')\n     const [Password, setPassword] = useState('')\n+    const {setUser} = useContext{userContext}\n     const handleSubmit = () => {\n \n     }\n         return (\n"
+                },
+                {
+                    "date": 1795530008272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n     const [username, setUsername] = useState('')\n     const [Password, setPassword] = useState('')\n     const {setUser} = useContext{userContext}\n     const handleSubmit = () => {\n+        e.PreventDefault()\n \n     }\n         return (\n     <div>\n"
+                },
+                {
+                    "date": 1795530052885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n     const [Password, setPassword] = useState('')\n     const {setUser} = useContext{userContext}\n     const handleSubmit = () => {\n         e.PreventDefault()\n+        setUser({username, Password})\n \n     }\n         return (\n     <div>\n"
+                },
+                {
+                    "date": 1795586187296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n function Login() {\n     const [username, setUsername] = useState('')\n     const [Password, setPassword] = useState('')\n-    const {setUser} = useContext{userContext}\n-    const handleSubmit = () => {\n+    const {setUser} = useContext(userContext)\n+    const handleSubmit = (e) => {\n         e.PreventDefault()\n         setUser({username, Password})\n \n     }\n"
+                },
+                {
+                    "date": 1795586326533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React, {useState, useContext} from 'react'\n-import userContext from '../context/userContext'\n+import userContext from './context/userContext'\n \n function Login() {\n     const [username, setUsername] = useState('')\n     const [Password, setPassword] = useState('')\n"
+                },
+                {
+                    "date": 1795586334472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React, {useState, useContext} from 'react'\n-import userContext from './context/userContext'\n+import userContext from '../context/userContext'\n \n function Login() {\n     const [username, setUsername] = useState('')\n     const [Password, setPassword] = useState('')\n"
+                },
+                {
+                    "date": 1795586587799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,23 +1,24 @@\n-import React, {useState, useContext} from 'react'\n+import {useState, useContext} from 'react'\n import userContext from '../context/userContext'\n \n function Login() {\n     const [username, setUsername] = useState('')\n     const [Password, setPassword] = useState('')\n     const {setUser} = useContext(userContext)\n     const handleSubmit = (e) => {\n-        e.PreventDefault()\n+        e.preventDefault()\n         setUser({username, Password})\n \n     }\n         return (\n     <div>\n         <h2>Login</h2>\n-        <input type=\"text\"\n+        <input type=\"password\"\n         value={username}\n         onChange={(e) => setUsername(e.target.value)}\n          placeholder='Username' />\n+         {\"  \"}\n         <input type=\"text\"\n         value={Password}\n         onChange={(e) => setPassword(e.target.value)}\n          placeholder='Password' />\n"
+                },
+                {
+                    "date": 1795586612878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n     }\n         return (\n     <div>\n-        <h2>Login</h2>\n+        <h2>Explore the world of Natu</h2>\n         <input type=\"password\"\n         value={username}\n         onChange={(e) => setUsername(e.target.value)}\n          placeholder='Username' />\n"
+                },
+                {
+                    "date": 1795586627524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n     }\n         return (\n     <div>\n-        <h2>Explore the world of Natu</h2>\n+        <h2>Login</h2>\n         <input type=\"password\"\n         value={username}\n         onChange={(e) => setUsername(e.target.value)}\n          placeholder='Username' />\n"
+                }
+            ],
+            "date": 1795459552956,
+            "name": "Commit-0",
+            "content": "import React, {useState, useContext} from 'react'\nimport userContext from '../context/userContext'\n\nfunction Login() {\n  return (\n    <div>Login</div>\n  )\n}\n\nexport default Login"
+        }
+    ]
+}

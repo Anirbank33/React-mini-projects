@@ -1,0 +1,42 @@
+{
+    "sourceFile": "miniContext/src/components/Profile.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1795585529279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1795585611298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,8 @@\n import { useContext } from \"react\"\n import userContext from \"../context/userContext\"\n \n function Profile() {\n-  return (\n-    <div>Profile</div>\n-  )\n+ const {user} = userContext(useContext)\n }\n \n export default Profile\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795585634102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { useContext } from \"react\"\n import userContext from \"../context/userContext\"\n \n function Profile() {\n- const {user} = userContext(useContext)\n+ const {user} = useContext(userContext)\n }\n \n export default Profile\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795585847873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,14 @@\n import userContext from \"../context/userContext\"\n \n function Profile() {\n  const {user} = useContext(userContext)\n+\n+ if (!user) {\n+    return <div>Please Login</div>\n\\ No newline at end of file\n+} else {\n+    return <div>Wellcome {user.username}</div>\n }\n+}\n \n-export default Profile\n+export default Profile\n+    \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1795586267544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { useContext } from \"react\"\n-import userContext from \"../context/userContext\"\n+import userContext from \"./context/userContext\"\n \n function Profile() {\n  const {user} = useContext(userContext)\n \n"
+                },
+                {
+                    "date": 1795586300086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { useContext } from \"react\"\n import userContext from \"./context/userContext\"\n \n function Profile() {\n- const {user} = useContext(userContext)\n+ const {user} = useContext{userContext}\n \n  if (!user) {\n     return <div>Please Login</div>\n } else {\n"
+                },
+                {
+                    "date": 1795586785512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n import { useContext } from \"react\"\n-import userContext from \"./context/userContext\"\n+import userContext from \"../context/userContext\"\n \n function Profile() {\n- const {user} = useContext{userContext}\n+ const {user} = useContext(userContext)\n \n  if (!user) {\n     return <div>Please Login</div>\n } else {\n-    return <div>Wellcome {user.username}</div>\n+    return <div>Welcome {user.username}</div>\n }\n }\n \n export default Profile\n"
+                }
+            ],
+            "date": 1795585529279,
+            "name": "Commit-0",
+            "content": "import { useContext } from \"react\"\nimport userContext from \"../context/userContext\"\n\nfunction Profile() {\n  return (\n    <div>Profile</div>\n  )\n}\n\nexport default Profile"
+        }
+    ]
+}
